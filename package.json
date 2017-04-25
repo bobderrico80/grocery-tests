@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "./entrypoint.sh",
-    "test": "jasmine-node ."
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/bobderrico80/grocery-tests#readme",
   "devDependencies": {
-    "frisby": "^0.8.5",
-    "jasmine-node": "^1.14.5",
+    "chakram": "^1.5.0",
+    "mocha": "^3.3.0",
     "sequelize-cli": "^2.7.0"
   },
   "dependencies": {
