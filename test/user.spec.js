@@ -1,4 +1,3 @@
-
 const chakram = require('chakram');
 const expect = chakram.expect;
 const API_ENDPOINT = process.env.API_ENDPOINT || 'http://localhost:8888';
