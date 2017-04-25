@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "./entrypoint.sh",
-    "test": "mocha"
+    "test": "mocha tests.js"
   },
   "repository": {
     "type": "git",
