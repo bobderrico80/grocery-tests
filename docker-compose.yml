@@ -1,0 +1,32 @@
+test:
+  tty: TRUE
+  restart: "no"
+  image: grocery/tests:1.0
+  links:
+    - node:grocery-api
+    - postgres:postgres
+  volumes:
+    - ./:/usr/src/app
+  environment:
+    API_ENDPOINT: http://grocery-api:8888
+
+postgres:
+  tty: TRUE
+  restart: "always"
+  image: postgres:latest
+  environment:
+    POSTGRES_USER: grocery
+    POSTGRES_DB: grocery
+    POSTGRES_PASSWORD: grocery
+
+node:
+  tty: TRUE
+  restart: "always"
+  image: grocery/node:0.0.0
+  links:
+    - postgres:postgres
+  volumes:
+    - ../grocery-api:/usr/src/app
+  environment:
+    NODE_ENV: development
+    SECRET_SALT: super_secret_development_salt
